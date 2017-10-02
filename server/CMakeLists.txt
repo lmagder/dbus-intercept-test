@@ -23,6 +23,8 @@ add_custom_command(OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/generated_impl.h"
 
 add_executable(server_app "server_main.cpp" "${CMAKE_CURRENT_BINARY_DIR}/generated_impl.h")
 add_executable(client_app "client_main.cpp" "${CMAKE_CURRENT_BINARY_DIR}/generated_interface.h")
+add_executable(interceptor_app "interceptor_main.cpp" "${CMAKE_CURRENT_BINARY_DIR}/generated_interface.h")
 
 target_link_libraries(server_app ${PKGCONFIG_LIBRARIES})
 target_link_libraries(client_app ${PKGCONFIG_LIBRARIES})
+target_link_libraries(interceptor_app ${PKGCONFIG_LIBRARIES})
