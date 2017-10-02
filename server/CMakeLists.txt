@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.1)
 
+set(CMAKE_CXX_STANDARD 11)
+
 include(FindPkgConfig)
 
 pkg_check_modules(PKGCONFIG REQUIRED dbus-1 dbus-c++-1)
