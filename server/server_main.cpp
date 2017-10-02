@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <signal.h>
+#include <dbus/dbus.h>
 
 #include "generated_impl.h"
 
@@ -43,7 +44,7 @@ int main()
     DBus::default_dispatcher = &dispatcher;
 
     DBus::Connection conn = DBus::Connection::SessionBus();
-    conn.request_name(SERVER_NAME);
+    conn.request_name(SERVER_NAME, DBUS_NAME_FLAG_ALLOW_REPLACEMENT);
 
     nativeguictrl_impl server(conn);
 
